@@ -1,0 +1,10 @@
+sample = ['GTA','GGG','CAC']
+
+def read_dna(dna_file):
+  dna_data = ""
+  with open(dna_file, "r") as f:
+    for line in f:
+      dna_data += line
+  return dna_data
+
+def dna_condons(dna):
