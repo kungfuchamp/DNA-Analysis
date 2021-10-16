@@ -8,3 +8,8 @@ def read_dna(dna_file):
   return dna_data
 
 def dna_condons(dna):
+  condons = []
+  for letter in range(0, len(dna), 3):
+    if (letter + 3) < len(dna):
+      condons.append(dna[letter:letter + 3])
+  return condons
