@@ -13,3 +13,17 @@ def dna_condons(dna):
     if (letter + 3) < len(dna):
       condons.append(dna[letter:letter + 3])
   return condons
+ 
+ def is_criminal(dna_sample):
+  dna_data = read_dna(dna_sample)
+  codons = dna_codons(dna_data)
+  num_matches = match_dna(codons)
+
+  if num_matches >= 3:
+    print "# of codon matches: %s. DNA profile matches. Continue investigation." % num_matches
+  else:
+    print "# of codon matches: %s. No DNA profile matches. Suspect can be freed." % num_matches
+
+is_criminal('suspect1.txt')
+is_criminal('suspect2.txt')
+is_criminal('suspect3.txt')
